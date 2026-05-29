@@ -88,14 +88,8 @@
         <section id="inicio" class="hero-section">
             <div class="section-container hero-grid">
                 <div class="hero-content">
-                    <div class="anniversary-seal-wrapper" id="hero-badge">
-                        <div class="anniversary-seal">
-                            <span class="seal-years">50</span>
-                            <span class="seal-label">Años</span>
-                        </div>
-                        <div class="anniversary-seal-text">
-                            1976 - 2026 | 50 Años de Orgullo y Frescura
-                        </div>
+                    <div class="hero-brand-anniversary" id="hero-badge">
+                        <img src="images/logo_50_ani.png" alt="50 Aniversario Pollo Bal" class="hero-anniversary-logo">
                     </div>
                     <h1 class="hero-title" id="main-heading">
                         Calidad, Frescura y Confianza que <span class="gradient-text">Impulsan tu Negocio</span>
@@ -348,12 +342,13 @@
                         
                         <!-- Panel Mayoreo -->
                         <div class="tab-panel active" id="panel-mayoreo" data-tab="mayoreo">
-                            <div class="products-grid">
+                            <div class="bento-grid">
                                 
-                                <!-- Producto 1: Pollo tipo rosticero -->
-                                <div class="product-card">
+                                <!-- Producto 1: Pollo tipo rosticero (Wide) -->
+                                <div class="bento-card wide">
                                     <div class="product-tag">Alta Demanda</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/th_pollo_rosticero.png" alt="Pollo tipo rosticero Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
@@ -363,37 +358,39 @@
                                     </div>
                                 </div>
 
-                                <!-- Producto 2: Pollo troceado en cortes especiales -->
-                                <div class="product-card">
+                                <!-- Producto 2: Pollo troceado en cortes especiales (Normal) -->
+                                <div class="bento-card">
                                     <div class="product-tag">Gran Volumen</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/th_pechuga_cortes.png" alt="Pollo troceado cortes especiales Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
-                                        <h4 class="product-name">Pollo Troceado (Cortes Especiales)</h4>
-                                        <p class="product-desc">Piernas, muslos, pechugas y piezas clasificadas y cortadas rigurosamente según tus necesidades industriales y de banquetes.</p>
+                                        <h4 class="product-name">Pollo Troceado</h4>
+                                        <p class="product-desc">Piernas, muslos, pechugas y piezas clasificadas y cortadas según tus necesidades comerciales.</p>
                                         <a href="#contacto" class="btn btn-secondary btn-sm btn-product-quote" data-product="Pollo troceado en cortes especiales (Mayoreo)">Pedir por WhatsApp</a>
                                     </div>
                                 </div>
 
-                                <!-- Producto 3: Pechugas en diferentes cortes -->
-                                <div class="product-card">
-                                    <div class="product-tag">Calidad Premium</div>
+                                <!-- Producto 3: Pechugas en diferentes cortes (Normal) -->
+                                <div class="bento-card">
+                                    <div class="product-tag">Premium</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/pollo_bal_hero.png" alt="Pechugas en diferentes cortes Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
-                                        <h4 class="product-name">Pechugas en Diferentes Cortes</h4>
-                                        <p class="product-desc">Pechugas de pollo premium frescas de granja, fileteadas, a la mitad o deshuesadas a la medida para hoteles y restaurantes.</p>
+                                        <h4 class="product-name">Pechugas en Cortes</h4>
+                                        <p class="product-desc">Pechugas de pollo premium frescas de granja, fileteadas o deshuesadas a la medida.</p>
                                         <a href="#contacto" class="btn btn-secondary btn-sm btn-product-quote" data-product="Pechugas en diferentes cortes (Mayoreo)">Pedir por WhatsApp</a>
                                     </div>
                                 </div>
 
-                                <!-- Producto 4: Pollo vivo -->
-                                <div class="product-tag" style="display:none;">Suministro Bio</div>
-                                <div class="product-card">
+                                <!-- Producto 4: Pollo vivo (Wide) -->
+                                <div class="bento-card wide">
                                     <div class="product-tag">Suministro Directo</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/refrigerated_truck.png" alt="Distribucion de pollo vivo Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
@@ -408,56 +405,60 @@
 
                         <!-- Panel Menudeo -->
                         <div class="tab-panel" id="panel-menudeo" data-tab="menudeo">
-                            <div class="products-grid">
+                            <div class="bento-grid">
                                 
-                                <!-- Producto 5: Alas Adobadas -->
-                                <div class="product-card">
+                                <!-- Producto 5: Alas Adobadas (Normal) -->
+                                <div class="bento-card">
                                     <div class="product-tag">Favorito Local</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/th_alitas_adobadas.png" alt="Alas Adobadas Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
                                         <h4 class="product-name">Alas Adobadas</h4>
-                                        <p class="product-desc">Nuestra receta estrella marinada en adobo artesanal de chiles secos locales. Ideales para reuniones, asados y botanear.</p>
+                                        <p class="product-desc">Nuestra receta estrella marinada en adobo artesanal de chiles secos locales.</p>
                                         <a href="#contacto" class="btn btn-secondary btn-sm btn-product-quote" data-product="Alas Adobadas (Menudeo)">Pedir por WhatsApp</a>
                                     </div>
                                 </div>
 
-                                <!-- Producto 6: Chorizo de pollo -->
-                                <div class="product-card">
+                                <!-- Producto 6: Chorizo de pollo (Wide) -->
+                                <div class="bento-card wide">
                                     <div class="product-tag">Saludable</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/th_chorizo_pollo.png" alt="Chorizo de pollo Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
                                         <h4 class="product-name">Chorizo de Pollo Casero</h4>
-                                        <p class="product-desc">Una alternativa saludable baja en grasas saturadas, elaborada 100% de pollo selecto y especias tradicionales mexicanas.</p>
+                                        <p class="product-desc">Una alternativa saludable baja en grasas saturadas, elaborada 100% de pollo selecto y especias tradicionales mexicanas de la costa.</p>
                                         <a href="#contacto" class="btn btn-secondary btn-sm btn-product-quote" data-product="Chorizo de pollo (Menudeo)">Pedir por WhatsApp</a>
                                     </div>
                                 </div>
 
-                                <!-- Producto 7: Pechugas Adobadas -->
-                                <div class="product-card">
+                                <!-- Producto 7: Pechugas Adobadas (Normal) -->
+                                <div class="bento-card">
                                     <div class="product-tag">Listo para Asar</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/th_alitas_adobadas.png" alt="Pechugas Adobadas Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
                                         <h4 class="product-name">Pechugas Adobadas</h4>
-                                        <p class="product-desc">Pechugas frescas adobadas artesanalmente con nuestra mezcla especial de la casa. Exquisitas y listas para cocinar en minutos.</p>
+                                        <p class="product-desc">Pechugas frescas adobadas artesanalmente. Exquisitas y listas para cocinar.</p>
                                         <a href="#contacto" class="btn btn-secondary btn-sm btn-product-quote" data-product="Pechugas Adobadas (Menudeo)">Pedir por WhatsApp</a>
                                     </div>
                                 </div>
 
-                                <!-- Producto 8: Prod. Valor Agregado (Empanizados) -->
-                                <div class="product-card">
+                                <!-- Producto 8: Prod. Valor Agregado (Wide) -->
+                                <div class="bento-card wide">
                                     <div class="product-tag">Especial del Día</div>
                                     <div class="product-image-container">
+                                        <div class="skeleton-loader"></div>
                                         <img src="images/th_pechuga_cortes.png" alt="Pechugas empanizadas de valor agregado Pollo Bal" class="product-img">
                                     </div>
                                     <div class="product-body">
                                         <h4 class="product-name">Prod. Valor Agregado (Empanizados)</h4>
-                                        <p class="product-desc">Pechugas empanizadas listas para freír. Elaboradas con pan molido de alta calidad para un crujido insuperable.</p>
+                                        <p class="product-desc">Pechugas empanizadas listas para freír. Elaboradas con pan molido premium de alta calidad para un crujido dorado inigualable.</p>
                                         <a href="#contacto" class="btn btn-secondary btn-sm btn-product-quote" data-product="Prod. Valor Agregado empanizados (Menudeo)">Pedir por WhatsApp</a>
                                     </div>
                                 </div>

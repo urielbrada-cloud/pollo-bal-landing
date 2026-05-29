@@ -915,23 +915,18 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
-.products-grid {
+/* Bento Grid Layout */
+.bento-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-@media (max-width: 768px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.product-card {
+.bento-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-light);
-    border-radius: 20px;
-    padding: 30px;
+    border-radius: 24px;
+    padding: 0;
     position: relative;
     overflow: hidden;
     transition: var(--transition-smooth);
@@ -939,10 +934,132 @@ body {
     flex-direction: column;
 }
 
-.product-card:hover {
-    transform: scale(1.02);
+.bento-card.wide {
+    grid-column: span 2;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
     border-color: var(--border-glow);
     box-shadow: var(--shadow-glow);
+}
+
+/* Responsive swipeable Bento grid on mobile */
+@media (max-width: 992px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-card.wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 24px;
+        padding-left: 4px;
+        padding-right: 4px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .bento-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .bento-card {
+        flex-shrink: 0;
+        width: 290px;
+        scroll-snap-align: start;
+    }
+    .bento-card.wide {
+        width: 290px;
+        grid-column: auto;
+    }
+}
+
+/* Skeleton Loading Effect */
+.skeleton-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #131A26 25%, #1C2638 50%, #131A26 75%);
+    background-size: 200% 100%;
+    animation: loadingSkeleton 1.6s infinite;
+    z-index: 2;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes loadingSkeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.product-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-surface);
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-img.loaded {
+    opacity: 1;
+}
+
+.bento-card:hover .product-img.loaded {
+    transform: scale(1.06);
+}
+
+.product-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Taller Cover image and Hero anniversary logo styles */
+.hero-brand-anniversary {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.hero-anniversary-logo {
+    max-height: 170px;
+    width: auto;
+    filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.35));
+    animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Make Hero image section significantly larger */
+.hero-grid {
+    grid-template-columns: 0.95fr 1.05fr !important;
+    gap: 40px;
+}
+
+.hero-image {
+    max-height: 520px !important;
+    width: 100%;
+    object-fit: cover;
 }
 
 .product-icon {

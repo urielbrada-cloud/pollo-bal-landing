@@ -179,18 +179,17 @@ _Mensaje enviado desde la Landing Page de Pollo Bal_`;
     });
 
     // 6. Scroll Reveal Animations (IntersectionObserver)
-    const animateElements = document.querySelectorAll('.fade-in-el, .pillar-card, .product-card, .sucursal-card');
+    const animateElements = document.querySelectorAll('.fade-in-el, .pillar-card, .bento-card, .sucursal-card');
 
     const revealOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-visible');
-                // Elements like pillar cards have default transition class in style.css
                 if (entry.target.classList.contains('fade-in-el')) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
-                observer.unobserve(entry.target); // Animate once
+                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -199,13 +198,32 @@ _Mensaje enviado desde la Landing Page de Pollo Bal_`;
     });
 
     animateElements.forEach(el => {
-        // Set inline initial styles if they are custom fade elements to ensure smooth start
         if (el.classList.contains('fade-in-el')) {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
         }
         revealOnScroll.observe(el);
+    });
+
+    // 7. Image Skeleton Loader Manager
+    const productImages = document.querySelectorAll('.product-img');
+    
+    productImages.forEach(img => {
+        const handleImageLoad = () => {
+            img.classList.add('loaded');
+            const loader = img.previousElementSibling;
+            if (loader && loader.classList.contains('skeleton-loader')) {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.remove(), 500); // Remove from DOM after transition finishes
+            }
+        };
+
+        if (img.complete) {
+            handleImageLoad();
+        } else {
+            img.addEventListener('load', handleImageLoad);
+        }
     });
 
 });
