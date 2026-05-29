@@ -1,0 +1,22 @@
+{
+  "name": "pollo-bal-landing",
+  "version": "1.0.0",
+  "description": "Renovacion de la landing page de Pollo Bal con conversion exclusiva a WhatsApp y demostracion de solidez regional.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite --port 3000 --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "pollo-bal",
+    "landing-page",
+    "whatsapp-conversion",
+    "vanilla-css"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
